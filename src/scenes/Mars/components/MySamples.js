@@ -6,6 +6,9 @@ import Button from "@material-ui/core/Button";
 import { fetchUsercodeAndSamples } from "../../../actions/mars";
 import { SESAR_SAMPLE_DISPLAY } from "../../../constants/api";
 import "../../../styles/mars.scss";
+import { CsvBuilder } from "filefy";
+
+
 
 import { SESAR_BASE_URL } from "../../../constants/api";
 
@@ -51,6 +54,26 @@ class MySamples extends Component {
     }
   }
 
+  handleExport(selectedRows,displayData, columns) {
+    //Get the rows that the user selected
+    let rows = [];
+    for (var i = 0; i < selectedRows.data.length; i++) {
+      let index = selectedRows.data[i].index;
+      rows.push(index);
+    }
+    let samples = [];
+    for (i = 0; i < rows.length; i++) {
+      let index = rows[i];
+      let sample = displayData[index];
+      samples.push(sample.data);
+    }
+    var csvBuilder = new CsvBuilder("selected.csv")
+      .setDelimeter(",")
+      .setColumns(columns)
+      .addRows(samples)
+      .exportFile();
+  }
+
   renderTable() {
     if (this.props.loading === true || this.props.loading == undefined) {
       //Show spinner
@@ -84,8 +107,16 @@ class MySamples extends Component {
         filter: true,
         filterType: "dropdown",
         responsive: "scroll",
+        
         customToolbarSelect: (selectedRows, displayData) => (
           <div>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={() => this.handleExport(selectedRows, displayData, columns)}
+            >
+              CSV of Selected
+            </Button>
             <Button
               variant="contained"
               color="primary"
