@@ -45,7 +45,7 @@ export const PreviewModal = props => {
   return (
     <div>
       <button
-        className="btn bg-white btn-outline-dark btn-middle"
+        className="btn bg-white btn-outline-dark btn-middle modal-button"
         onClick={() => setModalShow(true)}
       >
         Preview Mapping
