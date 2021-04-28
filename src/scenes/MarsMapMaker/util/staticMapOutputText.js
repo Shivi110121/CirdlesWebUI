@@ -16,8 +16,9 @@ export const LICENSE =
   "// OR CONDITIONS OF ANY KIND, either express or implied. See the License\n" +
   "// for the specific language governing permissions and limitations under the License.\n";
 
+  // not being used
 export const MMM_INFO =
-  "//\n// Mars Map Maker was created by Josh Gilley and Robert Niggebrugge\n" +
+  "//\n// Mars Map Maker was created by Josh Gilley, Robert Niggebrugge, and Chloe Stapleton\n" +
   "// of CIRDLES.org, with help from James Rundle,\n// under the guidance of Principal Investigator" +
   " Dr. Jim Bowring\n// in coordination with geosamples.org.\n//\n//\n";
 
