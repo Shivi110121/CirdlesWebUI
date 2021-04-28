@@ -60,20 +60,11 @@ function NavModal() {
               with pertinent metadata and an IGSN (International GeoSample
               Number). The initial targeted repository is the cores collection
               of Scripps Institution of Oceanography.  We are also developing
-              Mars Map Maker (MMM) to support the composition of maps between
+              Mars MapMaker (MMM) to support the composition of maps between
               a repository's meta-data fields and those of SESAR.   
-              Please visit CIRDLES.org, github.com/cirdles, and send inquiries to bowring@gmail.com.
-            </p>
-            <p>
-              Developed by 
-              <a href="https://github.com/bowring"> Jim Bowring</a>, 
-              <a href="https://github.com/baldwinjj"> Joey Baldwin</a>, 
-              <a href="https://github.com/tiaanicolee"> Tia Curry</a>, 
-              <a href="https://github.com/julius-walton"> Julius Walton</a>, 
-              <a href="https://github.com/jamesamrundle"> James Rundle</a>, 
-              <a href="https://github.com/joshuadgilley"> Josh Gilley</a>, 
-              <a href="https://github.com/hafey1"> Robert Niggebrugge</a>, and
-              <a href="https://github.com/stapletonce"> Chloe Stapleton</a>.
+              Please visit CIRDLES.org, 
+              github.com/cirdles,
+              and send inquiries to bowring@gmail.com.
             </p>
           </div>
         </Fade>
