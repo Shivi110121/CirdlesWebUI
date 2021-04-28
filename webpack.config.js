@@ -63,11 +63,6 @@ module.exports = {
           loader: "worker-loader",
           options: { inline: true, fallback: false }
         }
-      },
-      {
-        test: /\.js$/,
-        enforce: 'pre',
-        use: ['source-map-loader'],
       }
     ]
   },
