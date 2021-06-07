@@ -31,6 +31,7 @@ export const REQUIRED_SESAR_TITLES = ["user_code"];
 // these are possible date formats
 export const DATE_FORMAT_OPTION = [
   { title: "Select Date Format" },
+  { title: "None" },
   { title: "DD/MM/YY or DD-MM-YY", value: "substring", type: "date" },
   { title: "MM/DD/YY or MM-DD-YY", value: "substring", type: "date" },
   { title: "YY/DD/MM or YY-DD-MM", value: "substring", type: "date" },

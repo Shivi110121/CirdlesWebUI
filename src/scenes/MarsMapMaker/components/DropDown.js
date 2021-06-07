@@ -353,9 +353,8 @@ export class DropDown extends React.Component {
       }
       return;
     } else if (
-      (newValue === "collection_end_date" ||
-        newValue === "collection_start_date") &&
-      this.props.hasChosen
+      newValue === "collection_end_date" ||
+      newValue === "collection_start_date"
     ) {
       if (
         (breakOrFormat.includes("/") || breakOrFormat.includes("-")) &&
