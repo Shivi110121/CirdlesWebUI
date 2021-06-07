@@ -79,31 +79,28 @@ class MapOutput extends React.Component {
   forceEditFunction = () => {
     //sortedPersistent are the METADATA and METADATA_ADD fields
     let sortedPersistent = this.props.persist;
-    sortedPersistent.sort((a, b) => (a.index > b.index ? 1 : -1));
-
-    let sifted = this.filterSortedPersistent(sortedPersistent);
 
     let functID = "";
     let value = "";
-    for (let i = 0; i < sifted.length; i++) {
-      value = sifted[i].value;
-      if (!sifted[i].header.includes("<METADATA_ADD")) {
-        value = this.props.ent[sifted[i].index].value;
+    for (let i = 0; i < this.props.persist.length; i++) {
+      value = this.props.persist[i].value;
+      if (!this.props.persist[i].header.includes("<METADATA_ADD")) {
+        value = this.props.ent[this.props.persist[i].index].value;
       }
 
       functID =
         functID +
         "const forceEditID" +
-        i +
+        this.props.persist[i].index +
         " = () => {" +
         "\n" +
         "let mapMakerHeader = " +
         '"' +
-        sifted[i].header +
+        this.props.persist[i].header +
         '"' +
         "\n" +
         "let mapMakerIndex = " +
-        sifted[i].index +
+        this.props.persist[i].index +
         "\n  " +
         "return " +
         '"' +
