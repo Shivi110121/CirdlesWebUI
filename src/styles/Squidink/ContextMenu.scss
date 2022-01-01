@@ -1,0 +1,21 @@
+.menu {
+  background-color: #fff;
+  border: 1px solid;
+  box-shadow: 0 2px 5px;
+  font-size: 13px;
+  outline: 0;
+  padding: 2px 0;
+}
+.menuOpt {
+  padding: 12px 12px;
+  list-style: none;
+  cursor: pointer;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+li:hover {
+  background-color: #AAACB0;
+}
+
