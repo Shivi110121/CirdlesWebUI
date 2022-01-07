@@ -1,33 +1,37 @@
-import React, { Component } from "react";
-import { Route } from "react-router-dom";
-import { connect } from "react-redux";
-//import { signOutAction } from "../../actions/mars";
+import React, {Component} from "react";
+import {Route} from "react-router-dom";
+import {connect} from "react-redux";
+
 
 // Components
-import Header from "./components/Header";
-import Landing from "./components/landing";
-import SignIn from "./components/login";
-import Register from "./components/register";
-import Dashboard from "./components/Dashboard"
-//import SignIn from "./components/SignIn";
-//import MySamples from "./components/MySamples";
-//import Mapping from "./components/mapping";
-//import Upload from "./components/upload";
-//import requireAuth from "./components/authentication/require_auth";
-
-//Might not need norequireAuth
-//import noRequireAuth from "./components/authentication/no_require_auth";
+import Main from "./components/Main"
+import SkeletonExample from "./components/ManageProject"
+import ManageSpots from "./components/ManageSpots"
+import ShowAbout from "./components/ShowAbout"
+import 'styles/Squidink/Main.scss';
+//Constants
+import {
+    BASE_ROUTE,
+    CURRENTTASK_ROUTE,
+    MANAGEPROJECT_ROUTE,
+    MANAGESPOTS_ROUTE,
+    SHOWABOUT_ROUTE,
+    VIEWTASK_ROUTE
+} from "./util/constants"
+import {CurrentTask} from "./components/CurrentTask";
+import TaskLibrary from "./components/TaskLibrary";
 
 class SquidInkPage extends Component {
     render() {
         return (
-            <div className="ink">
-                <Header />
+            <div className="squidink">
                 <main>
-                    <Route exact path="/squidink" component={Landing} />
-                    <Route exact path="/squidink/login" component={SignIn} />
-                    <Route exact path="/squidink/register" component={Register} />
-                    <Route exact path="/squidink/dashboard" component={Dashboard} />
+                    <Route exact path={BASE_ROUTE} component={Main}/>
+                    <Route exact path={MANAGEPROJECT_ROUTE} component={SkeletonExample}/>
+                    <Route exact path={MANAGESPOTS_ROUTE} component={ManageSpots}/>
+                    <Route exact path={SHOWABOUT_ROUTE} component={ShowAbout}/>
+                    <Route exact path={CURRENTTASK_ROUTE} component={CurrentTask}/>
+                    <Route exact path={VIEWTASK_ROUTE} component={TaskLibrary}/>
                 </main>
             </div>
         );

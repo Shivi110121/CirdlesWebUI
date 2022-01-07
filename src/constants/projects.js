@@ -31,7 +31,4 @@ export const SQUIDINK = {
   description:
     'Squid as a Web Service'
 };
-export const PORTEDSQUID = {
-  description:
-    'PORTEDSQUID'
-};
+

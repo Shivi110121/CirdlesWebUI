@@ -15,9 +15,11 @@ import marslogo from "../img/logos/Mars.svg";
 import marsMapMakerLogo from "../img/logos/MarsMapMaker.svg";
 import inklogo from "../img/logos/SquidInk.svg";
 import { colors } from "constants";
+import {SQUIDINK_ENABLED} from "constants/api";
 
 import "styles/index.scss";
 import { maxHeaderSize } from "http";
+
 
 const routes = [
   {
@@ -86,9 +88,6 @@ const Header = ({ title, logo }) => {
           <NavLink className="nav-item nav-link ml-4" to="/#">
             <strong>Home</strong>
           </NavLink>
-          <NavLink className="nav-item nav-link ml-4" to="/squid">
-            Squid
-          </NavLink>
           {/* temporarily unavailable: 
             uncomment ambapo reference in Home/index as well
             <NavLink className="nav-item nav-link ml-4" to="/ambapo">
@@ -103,11 +102,16 @@ const Header = ({ title, logo }) => {
           <NavLink className="nav-item nav-link ml-4" to="/marsMapMaker">
             MARS Map Maker
           </NavLink>
-{/* Uncomment squidink in home/index.js as well
-          <NavLink className="nav-item nav-link ml-4" to="/squidink">
-            SQUIDINK
-          </NavLink>
-*/}
+
+             {
+               SQUIDINK_ENABLED ?
+            <NavLink className="nav-item nav-link ml-4" to="/squidink">
+              SQUIDINK
+            </NavLink>
+                   : null
+          }
+
+
         </div>
       </div>
     </nav>
@@ -128,9 +132,10 @@ class App extends Component {
               render={() => Header(route)}
             />
           );
-        })}
-        <main style={styles.body}>
-          <Switch>
+          })
+        }
+        <main >
+          <Switch style={styles.body}>
             {routes.map(route => {
               const { title, ...rest } = route;
               return <Route key={title + "-main-route"} {...rest} />;
@@ -144,14 +149,14 @@ class App extends Component {
 
 const styles = {
   wrapper: {
-    height: "100vh",
+    height: "100%",
     width: "100%",
     backgroundColor: colors.primary
   },
   body: {
     position: "absolute",
-    top: "3.5em",
-    right: "0",
+    top: "5.5em",
+    right: "100%",
     bottom: "0",
     left: "0",
     backgroundColor: colors.primary
